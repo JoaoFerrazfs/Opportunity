@@ -14,6 +14,18 @@ header{
     background-color: #FFF;
     border-bottom:1px solid #CCC;
 }
+
+.msg{
+    background-color: #d109a6;
+    font-weight: bolder;
+    font-size: 20px;
+    color: #CCC;
+    border: 1px solid #C3E6CB;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+}
 .row{
     margin: 0;
 }
@@ -84,14 +96,14 @@ padding: 50px;
     display: flex;    
 }
 #products-container .card{
-    flex: 1 1 0;
+    flex: 1 1 24%;
     max-width: 25%;
     border-radius: 10px;
     padding: 0;
-    margin: 8px;
+    margin: .5%;
 }
 #products-container img{
-    max-height: 150px;
+    max-height: 250px;
     border-top-left-radius:10px;
     border-top-right-radius:10px;
 }
@@ -120,4 +132,18 @@ padding: 50px;
     font-size: 20px;
     text-align: center;
     font-weight: 200;
+}
+
+/*Product create page*/
+#product-create-container{
+    padding: 30px;
+}
+
+#product-create-container label{
+    font-weight: bold;
+}
+
+#product-create-container input,
+#product-create-container select{
+    font-size: 12px;
 }

@@ -27,7 +27,10 @@
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a href="/" class="nav-link">Cardárpio</a>
-                            </li>                            
+                            </li>
+                            <li class="nav-item">
+                                <a href="/produto/cadastro" class="nav-link">Cadastro de Produto</a>
+                            </li>                             
                             
                         </ul>
                     </div>

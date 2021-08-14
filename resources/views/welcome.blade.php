@@ -17,7 +17,7 @@
         <div id="card-container" class="row">
             @foreach ($products as $product )
             <div class="card col-md-3">
-                <img src="/img/bolo.png" alt="{{$product->name}}">
+                <img src="/img/products/{{$product->image}}" alt="{{$product->name}}">
                 <div class="card-body">
                     <p class="card-name"> {{$product->name}}</p>
                     <p class="card-price">R$ {{$product->price}}</p>

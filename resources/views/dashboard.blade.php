@@ -1,15 +1,37 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.main')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
+@section('title','Cardápio Artes e Mimos Vivi')
+
+
+@section('content')
+
+<div id="search-container" class="col-md-12">
+    <h1>Busque uma Guloseima </h1>
+    <form action="#"> 
+        <input type="text" id="search" name="serach" class=" form-control" placeholder="Procurar">
+    </form>
+</div>
+
+<div id="products-container" class="col-md-12">
+    <h2>Nosso Cardápio<h2>
+        <div id="card-container" class="row">
+            @foreach ($products as $product )
+            <div class="card col-md-3">
+                <img src="/img/products/{{$product->image}}" alt="{{$product->name}}">
+                <div class="card-body">
+                    <p class="card-name"> {{$product->name}}</p>
+                    <p class="card-price">R$ {{$product->price}}</p>
+                    <p class="card-status"> {{$product->status}}</p>
+                    <button class=" btn btn-primary">Comprar</button>
+
+                </div>
+
             </div>
+                
+            @endforeach
         </div>
-    </div>
-</x-app-layout>
+</div>
+
+      
+        
+@endsection
