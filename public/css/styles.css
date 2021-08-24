@@ -88,6 +88,10 @@ header{
 #products-container{
 padding: 50px;    
 }
+
+#card-container img{
+    height: 180px;    
+    }
 #products-container h2{
     padding: 20px ;
     font-weight: 900;
@@ -147,3 +151,44 @@ padding: 50px;
 #product-create-container select{
     font-size: 12px;
 }
+
+/* product page*/
+
+#image-container,
+#info-container{
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+#image-container img {
+    
+    border-radius: 10px;
+}
+
+#info-container h1{
+   font-size: 36px;
+    font-weight: 900;
+}
+
+#info-container p {
+    margin:0;
+    font-size: 25px;
+    display: flex;
+ }
+
+ #info-container ion-icon{
+    font-size: 20px;
+    color:rgb(88, 62, 62) ;
+    margin-right: 20px;
+    padding-top: 10px;
+ }
+
+ #info-container #product-update{
+    margin: 25px 0;
+ }
+ .img-product img{
+   max-height: 600px;
+   display: flex;
+ }
+
+

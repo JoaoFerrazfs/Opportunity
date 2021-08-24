@@ -28,9 +28,26 @@
                             <li class="nav-item">
                                 <a href="/" class="nav-link">Cardárpio</a>
                             </li>
+                            @auth
                             <li class="nav-item">
                                 <a href="/produto/cadastro" class="nav-link">Cadastro de Produto</a>
-                            </li>                             
+                            </li>
+                            <form action="/logout" method="POST">
+                                @csrf
+                            <a href="/logout"
+                                class="nav-link" onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                                Sair
+                            </a>
+                            </form>
+
+                            @endauth
+
+                            @guest
+                            <li class="nav-item">
+                                <a href="/login" class="nav-link">Login</a>
+                            </li>
+                            @endguest                             
                             
                         </ul>
                     </div>

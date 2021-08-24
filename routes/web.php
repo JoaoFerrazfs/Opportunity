@@ -10,6 +10,10 @@ Route::get('/',[ProductController::class,'index']);
     return view('dashboard');
 })->name('dashboard');*/
 
-Route::get('/dashboard',[ProductController::class,'index']);
-Route::get('/produto/cadastro',[ProductController::class,'create']);
-Route::post('/produto',[ProductController::class,'store']);
+Route::get('/dashboard',[ProductController::class,'indexProduct'])->middleware('auth');
+Route::get('/produto/cadastro',[ProductController::class,'create'])->middleware('auth');
+Route::post('/produto',[ProductController::class,'store'])->middleware('auth');
+Route::get('/produto/{id}',[ProductController::class,'show'])->middleware('auth');
+Route::post('/cliente',[ProductController::class,'trolley']);
+
+

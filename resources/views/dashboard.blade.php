@@ -19,10 +19,10 @@
             <div class="card col-md-3">
                 <img src="/img/products/{{$product->image}}" alt="{{$product->name}}">
                 <div class="card-body">
-                    <p class="card-name"> {{$product->name}}</p>
-                    <p class="card-price">R$ {{$product->price}}</p>
-                    <p class="card-status"> {{$product->status}}</p>
-                    <button class=" btn btn-primary">Comprar</button>
+                    <p class="card-name"><ion-icon name="caret-forward-circle-outline"></ion-icon>{{$product->name}}</p>
+                    <p class="card-price"> <ion-icon name="cash-outline"></ion-icon> R$ {{$product->price}}</p>
+                    <p class="card-status" ><ion-icon name="flag-outline"></ion-icon> {{$product->status}}</p>
+                    <a href="/produto/{{$product->id}}" class=" btn btn-primary">Ver cadastro</a>
 
                 </div>
 

@@ -16,6 +16,16 @@ class ProductController extends Controller
         
         }
 
+    public function indexProduct(){
+
+        $products = Product::all();
+            
+    
+        return view('dashboard',['products'=>$products]);
+            
+        }   
+        
+
     public function create(){
         return view('manager.create');
     }
@@ -47,5 +57,37 @@ class ProductController extends Controller
         $product->save();
         return redirect('/dashboard')->with('msg','Produto adicionado com sucesso!');
 
+    }
+
+    public function show($id){
+
+        $product = Product::findOrFail($id);
+
+        return view('manager.show',['product'=>$product]);
+
+    }
+
+    public function trolley(Request $request){
+
+        $product = new Product;
+
+       $listIdProduct=$product->id=$request->buy;      
+       
+       $list=[];
+       $amount=0;
+       $i=1;      
+       $names="Pedido: ";
+        
+       foreach ($listIdProduct as $key => $build )       {
+           
+           $list[$key] = $product::find($build) ;  
+           $amount= $amount + $list[$key]->price  ; 
+           $names= $names." Produto: ".$i." ". $list[$key]->name;
+           $i++;
+           
+       }
+       return view('client.trolley',['products'=>$list,'valueProducts'=>$amount,'namesProducts'=>$names]);
+
+      
     }
 }
