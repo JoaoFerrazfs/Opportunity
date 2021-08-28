@@ -35,6 +35,10 @@
       </table>     
 
 
+      <div class="data" >
+
+        <h2> Dados pessoais </h2>
+
       <form method="POST" enctype="multipart/form-data" >
         @csrf
       <div class="row g-2 personalData mb-3 row ">
@@ -56,6 +60,8 @@
       <input type="submit" class="btn btn-primary" value="Confirmar Pedido">
       
       </form> 
+
+      </div>
 </div>
 
 
