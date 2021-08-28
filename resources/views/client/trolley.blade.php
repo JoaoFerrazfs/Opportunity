@@ -6,8 +6,8 @@
 @section('content')
 
 <div id="products-container" class="col-md-12">
-    <h2>Resumo do Pedido</h2>
-   
+    <h2>Resumo do Pedido</h2>,
+
     <table class="table table-hover">
         <thead>
           <tr>
@@ -32,11 +32,33 @@
               <th scope="col">R$ {{$valueProducts}}</th>        
             </tr>
           </thead>
-      </table>
+      </table>     
+
+
+      <form method="POST" enctype="multipart/form-data" >
+        @csrf
+      <div class="row g-2 personalData mb-3 row ">
+
+        <div class="col-auto">
+          <label for="name">Nome: </label>
+         <input type="text" class="form-control" name="name" id="name" placeholder="Seu nome">
+       </div>
+        <div class="col-auto">
+          <label for="name">Telefone: </label>
+          <input type="text" class="form-control" name="name" id="name" placeholder="Seu telefone">
+        </div>
+        <div class="col-sm-6">
+          <label for="name">Email: </label>
+          <input type="text" class="form-control" name="name" id="name" placeholder="Seu email">
+        </div>
+        
+      </div>
+      <input type="submit" class="btn btn-primary" value="Confirmar Pedido">
       
-      <a href="https://api.whatsapp.com/send?phone=553171316296 &text={{$namesProducts}}" class="btn btn-primary">Confirmar Pedido</a> 
-</form>
+      </form> 
 </div>
+
+
 
 
 

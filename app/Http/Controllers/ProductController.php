@@ -21,7 +21,7 @@ class ProductController extends Controller
         $products = Product::all();
             
     
-        return view('dashboard',['products'=>$products]);
+        return view('manager.products',['products'=>$products]);
             
         }   
         
@@ -89,5 +89,13 @@ class ProductController extends Controller
        return view('client.trolley',['products'=>$list,'valueProducts'=>$amount,'namesProducts'=>$names]);
 
       
+    }
+
+    public function report(){
+        $products = Product::all();
+        
+
+        return view('dashboard',['products'=>$products]);
+
     }
 }
