@@ -50,6 +50,9 @@
                             <li class="nav-item">
                                 <a href="/login" class="nav-link">Login</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="/consultapedido"class="btn btn btn-outline-info">Status do Seu pedido</a>
+                            </li>
                             @endguest                             
                             
                         </ul>

@@ -71,12 +71,11 @@ class ProductController extends Controller
 
         $product = new Product;
 
-       $listIdProduct=$product->id=$request->buy;      
-       
-       $list=[];
-       $amount=0;
-       $i=1;      
-       $names="Pedido: ";
+        $listIdProduct=$product->id=$request->buy;  
+        $list=[];
+        $amount=0;
+        $i=1;      
+        $names="Pedido: ";
         
        foreach ($listIdProduct as $key => $build )       {
            

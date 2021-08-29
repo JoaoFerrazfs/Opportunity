@@ -7,6 +7,7 @@
 
 <div id="search-container" class="col-md-12">
     <h1>Busque uma Guloseima </h1>
+    
     <form action="#"> 
         <input type="text" id="search" name="serach" class=" form-control" placeholder="Procurar">
     </form>
