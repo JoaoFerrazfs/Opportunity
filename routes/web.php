@@ -18,8 +18,9 @@ Route::post('/produto',[ProductController::class,'store'])->middleware('auth');
 Route::get('/produto/{id}',[ProductController::class,'show'])->middleware('auth');
 Route::post('/cliente',[ProductController::class,'trolley']);
 Route::get('/gerenciarprodutos',[ProductController::class,'indexProduct'])->middleware('auth');
-
 Route::post('/compra',[BuyController::class,'store']);
 Route::get('/consultapedido',[BuyController::class,'show']);
+Route::delete('/produto/{id}',[ProductController::class,'destroy']);
+
 
 

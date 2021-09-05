@@ -30,10 +30,13 @@
                             </li>
                             @auth
                             <li class="nav-item">
-                                <a href="/dashboard" class="nav-link">Gerenciamento</a>
+                                <a href="/dashboard" class="nav-link">Demanda</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/produto/cadastro" class="nav-link">Cadastro de Produto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/gerenciarprodutos" class="nav-link">Meus produtos</a>
                             </li>
                             <form action="/logout" method="POST">
                                 @csrf
