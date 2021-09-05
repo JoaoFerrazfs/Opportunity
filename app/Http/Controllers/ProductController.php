@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\ViewErrorBag;
 
 class ProductController extends Controller
 {
@@ -105,4 +106,30 @@ class ProductController extends Controller
        return redirect('/gerenciarprodutos')->with('msg','Produto excluído com sucesso!');
 
     }
+
+    public function update(Request $request){
+
+        $data = $request->all();
+
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+
+            $requestImage= $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName().strtotime("now")). "." .$extension;
+
+            $requestImage->move(public_path('img/products'),$imageName);
+
+            $data['image'] = $imageName;
+
+        }
+
+
+        Product::findOrFail($request->id)->update($data);
+
+        return redirect('/gerenciarprodutos')->with('msg','Produto atualizado com sucesso!');
+    }
+   
+    
 }
