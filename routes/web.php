@@ -22,6 +22,9 @@ Route::post('/compra',[BuyController::class,'store']);
 Route::get('/consultapedido',[BuyController::class,'show']);
 Route::delete('/produto/{id}',[ProductController::class,'destroy'])->middleware('auth');
 Route::put('/produto/atualizar/{id}',[ProductController::class,'update'])->middleware('auth');
+Route::post('/gerenciarpedidos',[BuyController::class,'statusRequests'])->middleware('auth');
+Route::put('/gerenciarpedidos/atualizar/{id}',[BuyController::class,'update'])->middleware('auth');
+
 
 
 

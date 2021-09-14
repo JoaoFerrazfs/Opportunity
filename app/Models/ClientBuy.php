@@ -13,4 +13,6 @@ class ClientBuy extends Model
         'products'=>'array',
         'values' =>'array'
     ];
+
+    protected $guarded = [];
 }

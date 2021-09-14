@@ -4,37 +4,54 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ClientBuy;
+use PhpParser\Node\Expr\FuncCall;
 
 class BuyController extends Controller
 {
-    public function show(){
+  public function show()
+  {
 
-        $products = ClientBuy::all();   
-        
-
-        return view('client.searchPurchases',['products'=>$products]);
-        
-        }
+    $products = ClientBuy::all();
 
 
-        public function store(Request $request){
+    return view('client.searchPurchases', ['products' => $products]);
+  }
 
-          $clientBuy = new ClientBuy;
 
-          $clientBuy->name = $request->name;
-          $clientBuy->fone = $request->fone;
-          $clientBuy->email = $request->email;
-          $clientBuy->status = $request->status;
-          $clientBuy->products = $request->products;
-          $clientBuy->values = $request->price;
-          $clientBuy->amout = $request->amout;        
+  public function store(Request $request)
+  {
 
-          $clientBuy->save();
+    $clientBuy = new ClientBuy;
 
-          $teste=$clientBuy->id;
+    $clientBuy->name = $request->name;
+    $clientBuy->fone = $request->fone;
+    $clientBuy->email = $request->email;
+    $clientBuy->status = $request->status;
+    $clientBuy->products = $request->products;
+    $clientBuy->values = $request->price;
+    $clientBuy->amout = $request->amout;
 
-          return redirect('/')->with('msg','Compra Realizada com Sucesso!    Número do Pedido: '.$teste);
-            
-            
-            }
+    $clientBuy->save();
+
+    $teste = $clientBuy->id;
+
+    return redirect('/')->with('msg', 'Compra Realizada com Sucesso!    Número do Pedido: ' . $teste);
+  }
+
+  public function statusRequests(Request $request)
+  {
+    $filter = request('filter');
+    $teste = ClientBuy::where('status', $filter)->get();
+
+
+    return view('manager.request', ['teste' => $teste]);
+  }
+
+  public function update(Request $request)
+  {
+    $data = $request->all();
+    ClientBuy::findOrFail($request->id)->update($data);
+
+    return redirect('/dashboard')->with('msg','Pedido '.$request->id. ' Atualizado');
+  }
 }

@@ -130,6 +130,11 @@ class ProductController extends Controller
 
         return redirect('/gerenciarprodutos')->with('msg','Produto atualizado com sucesso!');
     }
+
    
-    
+
+
 }
+
+
+

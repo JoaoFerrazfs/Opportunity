@@ -60,7 +60,7 @@
           <input type="text" class="form-control" name="email" id="email" placeholder="Seu email">
         </div>
 
-        <input type="hidden" id="status" name="status" value="novo">
+        <input type="hidden" id="status" name="status" value="Novo">
         
       </div>
       <input type="submit" class="btn btn-primary" value="Confirmar Pedido">
