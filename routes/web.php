@@ -12,7 +12,7 @@ Route::get('/',[ProductController::class,'index']);
     return view('dashboard');
 })->name('dashboard');*/
 
-Route::get('/dashboard',[ProductController::class,'report'])->middleware('auth');
+Route::get('/dashboard',[BuyController::class,'report'])->middleware('auth');
 Route::get('/produto/cadastro',[ProductController::class,'create'])->middleware('auth');
 Route::post('/produto',[ProductController::class,'store'])->middleware('auth');
 Route::get('/produto/{id}',[ProductController::class,'show'])->middleware('auth');

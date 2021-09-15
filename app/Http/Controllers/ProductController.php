@@ -91,14 +91,7 @@ class ProductController extends Controller
       
     }
 
-    public function report(){
-        $products = Product::all();
-        
-
-        return view('dashboard',['products'=>$products]);
-
-    }
-
+    
     public function destroy($id) {
 
         Product::findOrFail($id)->delete();
