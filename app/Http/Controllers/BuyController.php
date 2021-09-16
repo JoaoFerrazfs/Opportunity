@@ -10,11 +10,19 @@ class BuyController extends Controller
 {
   public function show()
   {
+    $search = request('search');
 
-    $products = ClientBuy::all();
+      if($search){
 
+        $resultFilter= ClientBuy::where('id', $search)->get();     
 
-    return view('client.searchPurchases', ['products' => $products]);
+      }else{
+        $resultFilter=null;     
+        
+      }
+      return view('client.searchPurchases', ['resultFilter' => $resultFilter]);
+    
+    
   }
 
 
