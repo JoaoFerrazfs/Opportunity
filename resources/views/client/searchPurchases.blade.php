@@ -23,13 +23,16 @@
         </form>
 
     </div>
+    </div>
+
+    <div class="container-fluid">
 
     @if ($resultFilter == null)
     <h2>Ainda não foi realizada nenhuma pesquisa</h2>
 
     @else
 
-    <div class="container-fluid">
+    <div>
         <h2>Agradecemos pela compra</h2>
 
         <table class="table caption-top">
