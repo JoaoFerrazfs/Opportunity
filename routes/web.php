@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
-use App\http\Controllers\BuyController;
 use App\Models\Product;
 use App\Models\ClientBuy;
+use App\Http\Controllers\BuyController;
+use App\Http\Controllers\compraController;
 
 Route::get('/',[ProductController::class,'index']);
 
@@ -24,6 +25,7 @@ Route::delete('/produto/{id}',[ProductController::class,'destroy'])->middleware(
 Route::put('/produto/atualizar/{id}',[ProductController::class,'update'])->middleware('auth');
 Route::post('/gerenciarpedidos',[BuyController::class,'statusRequests'])->middleware('auth');
 Route::put('/gerenciarpedidos/atualizar/{id}',[BuyController::class,'update'])->middleware('auth');
+Route::get('/teste',[BuyController::class,'teste']);
 
 
 

@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ClientBuy;
-use PhpParser\Node\Expr\FuncCall;
 
-class BuyController extends Controller
+
+class compraController extends Controller
 {
     public function show()
     {
@@ -120,18 +120,4 @@ class BuyController extends Controller
 
 
     }
-
-
-
-    public function teste()
-    {
-        
-        $teste ="oi";
-
-        print_r($teste);
-
-       
-    }
-
-
 }
